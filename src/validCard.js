@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 const validCard = (cardNumber) => {
 let sum = 0;
 		const digits = cardNumber.toString();
@@ -14,11 +11,6 @@ let sum = 0;
 				return 'Not a valid card number';
 			}
         }
-    return (
-    <div>
-
-    </div>
-);
 	}
 
 export default validCard;
