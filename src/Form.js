@@ -5,13 +5,13 @@ const Form = () => {
 	const [ cardNumber, setCardNumber ] = useState('');
 	const [ cardValidity, setCardValidity ] = useState('');
 
-	useEffect(
+	useEffect( //this will run when the component mounts 
 		() => {
 			if (cardNumber !== '') {
 				setCardValidity(validCard(cardNumber));
 			}
 		},
-		[ cardNumber ]
+		[ cardNumber ] //dependency array. this will run only when cardNumber changes
 	);
 
 	const handleCardNumberChange = (event) => {
@@ -22,11 +22,12 @@ const Form = () => {
 		<div>
 			<form className='Form'>
 				<label>
-					Credit Card Number:
-					<input type="text" value={cardNumber} onChange={handleCardNumberChange} />
+					<h3>Credit Card Number:</h3>
 				</label>
+				<input type="text" value={cardNumber} onChange={handleCardNumberChange} />
+				<h3>{cardValidity}</h3>
 			</form>
-			{cardValidity !== '' && <p>{`The card number is ${cardValidity}`}</p>}
+		
 		</div>
 	);
 };
