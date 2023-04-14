@@ -9,9 +9,9 @@ let sum = 0;
 			digit *= 2;
 			sum += digit;
 			if (sum % 10 === 0) {
-				return 'valid';
+				return 'Valid';
 			} else {
-				return 'not valid';
+				return 'Not a valid card number';
 			}
         }
     return (
