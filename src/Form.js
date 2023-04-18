@@ -2,32 +2,34 @@ import React, { useState, useEffect } from 'react';
 import validCard from './validCard';
 
 const Form = () => {
-	const [ cardNumber, setCardNumber ] = useState('');
+	const [ cardNumber, setCardNumber ] = useState(''); //empty string is the initial value
 	const [ cardValidity, setCardValidity ] = useState('');
 
-	useEffect( //this will run when the component mounts 
+	useEffect(
+		//this will run when the component mounts
 		() => {
 			if (cardNumber !== '') {
-				setCardValidity(validCard(cardNumber));
+				//this will run only when cardNumber is not empty
+				setCardValidity(validCard(cardNumber)); //this will update the value of cardValidity
 			}
 		},
 		[ cardNumber ] //dependency array. this will run only when cardNumber changes
 	);
 
 	const handleCardNumberChange = (event) => {
-		setCardNumber(event.target.value);
+		//this will run when the input changes
+		setCardNumber(event.target.value); //this will update the  value of cardNumber
 	};
 
 	return (
 		<div>
-			<form className='Form'>
+			<form className="Form">
 				<label>
 					<h3>Credit Card Number:</h3>
 				</label>
 				<input type="text" value={cardNumber} onChange={handleCardNumberChange} />
-				<h3>{cardValidity}</h3>
+				<span>{cardValidity}</span>
 			</form>
-		
 		</div>
 	);
 };
