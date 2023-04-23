@@ -6,8 +6,6 @@ const App = () => {
 		<div>
 			<h1>Credit Card Validation</h1>
 			<Form />
-			<br />
-			<button>Submit</button>
 		</div>
 	);
 };

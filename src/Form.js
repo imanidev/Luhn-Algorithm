@@ -24,9 +24,8 @@ const Form = () => {
 	return (
 		<div>
 			<form className="Form">
-				<label>
-					<h3>Credit Card Number:</h3>
-				</label>
+				<h3>Credit Card Number:</h3>
+
 				<input type="text" value={cardNumber} onChange={handleCardNumberChange} />
 				<span>{cardValidity}</span>
 			</form>
